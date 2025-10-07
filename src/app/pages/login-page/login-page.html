@@ -1,4 +1,4 @@
-<div id="container" class="card">
+<div id="container" class="card"></div>
   <h1>Iniciar sesión</h1>
   <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
   <div>
@@ -15,7 +15,7 @@
       <p class="error">Debe colocar una contraseña de al menos 4 caracteres.</p>
     } 
   </div>
-  <button>Iniciar sesión</button>
+  <button [disabled]="isLoading || loginForm.invalid">Iniciar sesión</button>
   @if(isLoading){
     <app-spinner></app-spinner>
   }
@@ -26,4 +26,3 @@
 </form>
 
 <a routerLink="/">Home</a>
-</div>
