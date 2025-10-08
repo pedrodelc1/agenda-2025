@@ -4,7 +4,7 @@
     <span>{{contact().email}}</span>
     <span>-</span>
     <span>
-        <button (click)="contactsService.deleteContact(contact().id)">Borrar</button>
+        <button (click)="openDeleteModal()">Borrar</button>
         <a [routerLink]="['/contacts',contact().id,'edit']">Editar</a>
     </span>
     <span>

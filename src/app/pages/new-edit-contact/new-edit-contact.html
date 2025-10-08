@@ -45,10 +45,13 @@
        <p class="error">Error indeterminado, intente nuevamente.</p>
      } 
      @if(idContacto()){
-       <button [disabled]="newContactForm.invalid">Editar</button>
+       <button [disabled]="newContactForm.invalid || isLoading">Editar</button>
      } @else {
      <button [disabled]="newContactForm.invalid">Crear</button>
   }
- 
+  @if(isLoading){
+    <app-spinner></app-spinner>
+  }
+
   </form>
   </div>
