@@ -1,3 +1,86 @@
-.favourite{
-    font-weight: bold;
+$color-card: #111d2b;
+$color-texto: #ffffff;
+$color-boton: #097b9e;
+$color-boton-hover: #0aa8cc;
+$color-link: #00b6ff;
+
+/* Fila */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.02);
+  margin-bottom: 6px;
+
+  > span:nth-child(1) { flex: 0 0 28%; color: $color-texto; }
+  > span:nth-child(2) { flex: 0 0 18%; color: $color-texto; }
+  > span:nth-child(3) { flex: 0 0 28%; color: $color-texto; }
+  > span:nth-child(4) { flex: 0 0 14%; color: $color-texto; }
+  > span:nth-child(5) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.acciones {
+  button {
+    height: 32px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: $color-boton;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover { background-color: $color-boton-hover; }
+  }
+
+  a {
+    color: $color-link;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+.star { color: #ffd24a; font-size: 16px; }
+
+.buttonBorrar {
+  width: 56px;
+  height: 36px;
+  border-radius: 6px;
+  background-color: $color-boton;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid $color-link;
+  margin-left: -35px;
+  font-size: 14px;
+  cursor: pointer;
+
+  &:hover { background-color: $color-boton-hover; }
+}
+
+/* Si querés que todos los <a> de este módulo luzcan como botón */
+a {
+  font-size: 14px;
+  width: 56px;
+  height: 36px;
+  border-radius: 6px;
+  background-color: $color-boton;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid $color-link;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover { background-color: $color-boton-hover; }
 }

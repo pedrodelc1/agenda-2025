@@ -1,10 +1,10 @@
-<li [class.favourite]="contact().isFavorite === true">
+<li class="row" [class.favourite]="contact().isFavorite === true">
     <span>{{contact().firstName}} {{contact().lastName}}</span>
     <span>{{contact().number}}</span>
     <span>{{contact().email}}</span>
     <span>-</span>
     <span>
-        <button (click)="openDeleteModal()">Borrar</button>
+        <button class="buttonBorrar" (click)="openDeleteModal()">Borrar</button>
         <a [routerLink]="['/contacts',contact().id,'edit']">Editar</a>
     </span>
     <span>

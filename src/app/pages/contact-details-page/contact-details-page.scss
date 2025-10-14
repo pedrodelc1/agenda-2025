@@ -1,0 +1,95 @@
+$bg: #0b1622;
+$card: #111d2b;
+$border: rgba(0, 180, 255, 0.15);
+$text: #ffffff;
+$muted: #bcd0e6;
+$link: #00b6ff;
+$btn: #097b9e;
+$btnh: #0aa8cc;
+$danger: #e05252;
+
+:host {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: $bg;
+  color: $text;
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 40px 16px;
+}
+
+#container {
+  width: 100%;
+  max-width: 560px;
+  background-color: $card;
+  border: 1px solid $border;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.state { color: $muted; font-size: 16px; }
+
+h1 {
+  margin: 0 0 6px 0;
+  font-size: 26px;
+  color: $link;
+  font-weight: 600;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    color: $text;
+
+    span.label {
+      color: $muted;
+      margin-right: 6px;
+    }
+  }
+}
+
+.fav { color: #ffd24a; font-size: 18px; }
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+
+  button {
+    height: 36px;
+    padding: 0 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: $btn;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .2s ease;
+
+    &:hover { background-color: $btnh; }
+    &.danger { background-color: $danger; }
+    &.danger:hover { background-color: darken($danger, 6%); }
+  }
+
+  a {
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    color: $link;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover { text-decoration: underline; }
+  }
+}

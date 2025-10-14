@@ -1,0 +1,109 @@
+$color-fondo: #0b1622;
+$color-card: #111d2b;
+$color-borde: rgba(0, 180, 255, 0.15);
+$color-texto: #ffffff;
+$color-texto-sec: #bcd0e6;
+$color-input: #d9e4f5;
+$color-link: #00b6ff;
+$color-error: #ff4d6d;
+$color-btn: #097b9e;
+$color-btn-hover: #0aa8cc;
+
+:host {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: $color-fondo;
+  color: $color-texto;
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 40px 16px;
+}
+
+#container {
+  width: 100%;
+  max-width: 560px;
+  background-color: $color-card;
+  border: 1px solid $color-borde;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 26px;
+  color: $color-link;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+label { font-size: 14px; color: $color-texto-sec; }
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="url"] {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: $color-input;
+  color: #000;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+input:focus { outline: 2px solid $color-link; }
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: $color-btn;
+}
+
+.error { color: $color-error; font-size: 13px; }
+
+button {
+  align-self: center;
+  width: 100%;
+  max-width: 320px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: $color-btn;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+
+  &:hover { background-color: $color-btn-hover; }
+  &:disabled { opacity: .6; cursor: not-allowed; }
+}
+
+app-spinner { margin-left: 8px; }
+
+a[routerLink] {
+  color: $color-link;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover { text-decoration: underline; }
+}
+

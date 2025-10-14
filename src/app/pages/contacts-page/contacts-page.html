@@ -1,14 +1,13 @@
-<!-- <a routerLink="login">Ir a login</a> -->
-<div>
-  <span>Nombre</span>
-  <span>Telefono</span>
-  <span>Email</span>
-  <span>Grupos</span>
-  <span>Acciones</span>
- </div>
- <ul>
-  @for (contactoIndividual of contactsService.contacts; track $index) {
-    <app-contact-list-item [contact]="contactoIndividual"></app-contact-list-item>
-  }
- </ul>
- <a routerLink="/contacts/new">+</a>
+<div class="wrapper">
+  <div class="table-header">
+    <span>Nombre</span><span>Telefono</span><span>Email</span><span>Grupos</span><span>Acciones</span>
+  </div>
+
+  <ul class="table-rows">
+    @for (c of contactsService.contacts; track c.id) {
+      <app-contact-list-item [contact]="c"></app-contact-list-item>
+    }
+  </ul>
+
+  <a class="add" routerLink="/contacts/new">+</a>
+</div>

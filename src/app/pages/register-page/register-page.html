@@ -1,4 +1,4 @@
-<div id="container" class="card"></div>
+<div id="container" class="card">
   <h1>Registrarse</h1>
   <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
     <div>
@@ -17,7 +17,7 @@
     </div>
     <div>
       <label for="lastName">Apellido</label>
-      <input id="lastName" name="lastName" type="lastName" id="lastName" ngModel #lastName="ngModel" required="true" autocomplete="family-name">
+      <input id="lastName" name="lastName" type="text" id="lastName" ngModel #lastName="ngModel" required="true" autocomplete="family-name">
       @if (lastName.invalid && !lastName.pristine) {
         <p class="error">Este campo es obligatorio.</p>
       }
@@ -42,9 +42,8 @@
     }
     @if (errorRegister) {
       <p class="error">Error indeterminado, intente nuevamente.</p>
-    } 
+    }
     <p>Ya tenés cuenta? <a routerLink="/login">Inicia sesion</a>
     </p>
   </form>
-
-  <a routerLink="/">Home</a>
+  </div>

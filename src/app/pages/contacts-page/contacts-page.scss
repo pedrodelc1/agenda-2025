@@ -1,10 +1,108 @@
 @use "./../../../../public/styles/forms-pages.scss";
 
-.error{
-    color: var(--color-error);
+$color-fondo: #0b1622;
+$color-card: #111d2b;
+$color-borde: rgba(0, 180, 255, 0.15);
+$color-texto: #ffffff;
+$color-texto-sec: #bcd0e6;
+$color-link: #00b6ff;
+$color-boton: #097b9e;
+$color-boton-hover: #0aa8cc;
+
+:host {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: $color-fondo;
+  color: $color-texto;
+  font-family: 'Poppins', Arial, sans-serif;
+  padding: 40px 16px;
 }
 
-span {
-    color: var(--color-primary);
-    margin: 10px;
+:host > div,
+.table {
+  width: 100%;
+  max-width: 960px;
+  background-color: $color-card;
+  border: 1px solid $color-borde;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.08);
+  padding: 20px;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  color: $color-texto-sec;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.table-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .row {
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .02);
+  }
+}
+
+.table-header span:nth-child(1),
+.row > span:nth-child(1) { flex: 0 0 28%; }
+
+.table-header span:nth-child(2),
+.row > span:nth-child(2) { flex: 0 0 18%; }
+
+.table-header span:nth-child(3),
+.row > span:nth-child(3) { flex: 0 0 28%; }
+
+.table-header span:nth-child(4),
+.row > span:nth-child(4) { flex: 0 0 14%; }
+
+.table-header span:nth-child(5),
+.row > span:nth-child(5) {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-top: 14px;
+  border-radius: 6px;
+  background-color: $color-boton;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 450px;
+
+  &:hover { background-color: $color-boton-hover; }
+}
+
+.wrapper {
+  background-color: #111d2b;
+  border: 1px solid rgba(0, 180, 255, .15);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 180, 255, .08);
+  padding: 20px;
+  max-width: 1100px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

@@ -1,0 +1,88 @@
+$color-fondo: #0b1622;
+$color-card: #111d2b;
+$color-boton: #097b9e;
+$color-boton-hover: #0aa8cc;
+$color-texto: #ffffff;
+$color-input: #d9e4f5;
+$color-link: #00b6ff;
+
+:host {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-fondo;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: $color-texto;
+}
+
+#container {
+  background-color: $color-card;
+  border: 1px solid rgba(0, 180, 255, 0.15);
+  border-radius: 10px;
+  padding: 30px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.08);
+}
+
+h1 {
+  margin: 0;
+  font-size: 26px;
+  color: $color-link;
+  font-weight: 600;
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label { font-size: 14px; color: #bcd0e6; }
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: $color-input;
+  color: #000;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
+input:focus { outline: 2px solid $color-link; }
+
+/* Botón */
+button {
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: $color-boton;
+  color: $color-texto;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 500px;
+}
+
+button:hover { background-color: $color-boton-hover; }
+
+.error { color: #ff4d6d; font-size: 13px; margin-top: 4px; }
+
+p { font-size: 14px; color: #bcd0e6; }
+
+a[routerLink] {
+  color: $color-link;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover { text-decoration: underline; }
+}
