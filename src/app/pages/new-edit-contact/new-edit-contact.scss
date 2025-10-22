@@ -97,7 +97,11 @@ button {
   &:disabled { opacity: .6; cursor: not-allowed; }
 }
 
-app-spinner { margin-left: 8px; }
+.form-spinner {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+}
 
 a[routerLink] {
   color: $color-link;
@@ -106,4 +110,3 @@ a[routerLink] {
 
   &:hover { text-decoration: underline; }
 }
-

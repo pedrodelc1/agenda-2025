@@ -13,18 +13,33 @@ export class LoggedLayout {
 
   authService = inject(AuthService);
 
-  openlogoutModal(){
+  openlogoutModal() {
     Swal.fire({
-      title: "Do you want to save the changes?",
-      showDenyButton: true,
-      showConfirmButton: false,
+      title: '¿Seguro que querés cerrar sesión?',
+      text: 'Tu sesión actual se cerrará.',
+      icon: 'warning',
+      background: '#0b1622', 
+      color: '#fff',      
       showCancelButton: true,
-      confirmButtonText: "Cerrar sesión",
-      denyButtonText: `Cerrar sesión`
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (result.isDenied) {
+      confirmButtonText: 'Sí, cerrar sesión',
+      cancelButtonText: 'Cancelar',
+      confirmButtonColor: '#097b9e',
+      cancelButtonColor: 'grey',  
+      customClass: {
+        cancelButton: 'swal-cancel-button'
+      },
+    }).then(({ isConfirmed }) => {
+      if (isConfirmed) {
         this.authService.logout();
+        Swal.fire({
+          title: 'Sesión cerrada',
+          icon: 'success',
+          background: '#0b1622',
+          color: '#fff',
+          confirmButtonColor: '#097b9e',
+          timer: 1500,
+          showConfirmButton: false
+        });
       }
     });
   }
