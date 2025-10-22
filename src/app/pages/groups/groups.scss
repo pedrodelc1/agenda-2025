@@ -1,0 +1,10 @@
+@use "./../../../../public/styles/forms-pages.scss";
+
+$color-fondo: #0b1622;
+
+:host {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: $color-fondo;
+}
