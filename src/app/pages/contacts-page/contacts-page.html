@@ -1,11 +1,31 @@
 <div class="wrapper">
+  <div class="filters">
+    <label class="filters__search">
+      <span class="filters__label">Buscar</span>
+      <input
+        type="search"
+        placeholder="Nombre, correo o teléfono"
+        [(ngModel)]="searchTerm"
+        name="searchTerm"
+        autocomplete="off"
+      />
+    </label>
+
+    <label class="filters__favorite">
+      <input type="checkbox" [(ngModel)]="onlyFavorites" name="onlyFavorites" />
+      <span>Solo favoritos</span>
+    </label>
+  </div>
+
   <div class="table-header">
-    <span>Nombre</span><span>Telefono</span><span>Email</span><span>Grupos</span><span>Acciones</span>
+    <span>Nombre</span><span>Teléfono</span><span>Email</span><span>Grupos</span><span>Acciones</span>
   </div>
 
   <ul class="table-rows">
-    @for (c of contactsService.contacts; track c.id) {
+    @for (c of filteredContacts; track c.id) {
       <app-contact-list-item [contact]="c"></app-contact-list-item>
+    } @empty {
+      <li class="empty-state">No se encontraron contactos que coincidan con la búsqueda.</li>
     }
   </ul>
 
